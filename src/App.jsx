@@ -60,6 +60,17 @@ function SectionTitle({ eyebrow, title, highlight }) {
 
 function App() {
   const [state, handleSubmit] = useForm("xvzloakg");
+
+  const enviarFormulario = async (event) => {
+    event.preventDefault();
+
+    await handleSubmit(event);
+
+    if (event.target) {
+      event.target.reset();
+    }
+  };
+
   return (
     <div className="site">
       <div className="bg-glow bg-glow-1"></div>
@@ -332,7 +343,7 @@ function App() {
             </div>
           </div>
 
-          <form className="card contact-form" onSubmit={handleSubmit}>
+          <form className="card contact-form" onSubmit={enviarFormulario}>
             <input type="text" name="name" placeholder="Seu nome" required />
             <input type="email" name="email" placeholder="Seu e-mail" required />
             <textarea
