@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import "./index.css";
+import { useForm, ValidationError } from "@formspree/react";
 
 const projects = [
   {
@@ -58,6 +59,7 @@ function SectionTitle({ eyebrow, title, highlight }) {
 }
 
 function App() {
+  const [state, handleSubmit] = useForm("xvzloakg");
   return (
     <div className="site">
       <div className="bg-glow bg-glow-1"></div>
@@ -313,15 +315,15 @@ function App() {
             <div className="contact-list">
               <div>
                 <strong>E-mail</strong>
-                <span>seuemail@exemplo.com</span>
+                <span>camilla.desenvolvedora@gmail.com</span>
               </div>
               <div>
                 <strong>LinkedIn</strong>
-                <span>linkedin.com/in/seuperfil</span>
+                <span>www.linkedin.com/in/camillaestevaolodi</span>
               </div>
               <div>
                 <strong>GitHub</strong>
-                <span>github.com/seuusuario</span>
+                <span>github.com/CamillaEstevao</span>
               </div>
               <div>
                 <strong>Localização</strong>
@@ -330,13 +332,23 @@ function App() {
             </div>
           </div>
 
-          <form className="card contact-form">
-            <input type="text" placeholder="Seu nome" />
-            <input type="email" placeholder="Seu e-mail" />
-            <textarea rows="6" placeholder="Conte um pouco sobre o projeto..." />
-            <button type="submit" className="btn btn-solid">
-              Enviar mensagem
+          <form className="card contact-form" onSubmit={handleSubmit}>
+            <input type="text" name="name" placeholder="Seu nome" required />
+            <input type="email" name="email" placeholder="Seu e-mail" required />
+            <textarea
+              name="message"
+              rows="6"
+              placeholder="Conte um pouco sobre o projeto..."
+              required
+            />
+            <button type="submit" className="btn btn-solid" disabled={state.submitting}>
+              {state.submitting ? "Enviando..." : "Enviar mensagem"}
             </button>
+            {state.succeeded && (
+              <p style={{ color: "#4ade80", marginTop: "10px" }}>
+                Mensagem enviada com sucesso! 💜
+              </p>
+            )}
           </form>
         </section>
       </main>
