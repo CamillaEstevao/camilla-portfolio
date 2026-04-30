@@ -1,0 +1,326 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#05010d] text-white m-0 font-sans;
+  background-image:
+    radial-gradient(circle at top left, rgba(139, 92, 246, 0.12), transparent 25%),
+    radial-gradient(circle at right center, rgba(168, 85, 247, 0.12), transparent 22%);
+}
+
+a {
+  @apply no-underline text-inherit;
+}
+
+.site {
+  @apply min-h-screen relative overflow-hidden;
+}
+
+.container {
+  @apply w-[min(100%-24px,1240px)] mx-auto;
+}
+
+.header {
+  @apply w-[min(100%-24px,1240px)] mx-auto py-6 flex items-center justify-between gap-6;
+}
+
+.logo {
+  @apply text-3xl font-extrabold tracking-wide;
+}
+
+.nav {
+  @apply hidden md:flex items-center gap-6 text-sm text-white/70;
+}
+
+.nav a {
+  @apply transition hover:text-white;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 transition;
+}
+
+.btn-solid {
+  @apply bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-700/20 hover:-translate-y-0.5;
+}
+
+.btn-outline,
+.btn-ghost {
+  @apply border border-white/10 bg-white/5 text-white hover:border-violet-400/40 hover:shadow-lg hover:shadow-violet-500/10;
+}
+
+.eyebrow {
+  @apply inline-block text-xs uppercase tracking-[0.25em] text-fuchsia-400 mb-4;
+}
+
+.hero {
+  @apply min-h-[88vh] grid md:grid-cols-2 gap-10 items-center py-10;
+}
+
+.hero-copy h1 {
+  @apply text-5xl md:text-7xl font-black leading-[0.92] tracking-[-0.04em] mb-5;
+}
+
+.hero-copy h1 strong,
+.section-title strong {
+  @apply text-violet-500;
+}
+
+.hero-copy p {
+  @apply text-white/70 leading-8 max-w-xl;
+}
+
+.hero-actions {
+  @apply flex flex-wrap gap-4 mt-8;
+}
+
+.stats {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-5 mt-10 pt-6 border-t border-white/10;
+}
+
+.stats h3 {
+  @apply text-3xl text-violet-500 m-0;
+}
+
+.stats span {
+  @apply text-sm text-white/60;
+}
+
+.hero-visual {
+  @apply relative min-h-[420px] md:min-h-[620px] flex items-center justify-center;
+}
+
+.hero-ring {
+  @apply absolute w-[320px] h-[320px] md:w-[460px] md:h-[460px] rounded-full;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.28), rgba(139, 92, 246, 0.03) 60%, transparent 70%);
+  box-shadow: 0 0 110px rgba(139, 92, 246, 0.25);
+}
+
+.portrait-card,
+.about-photo,
+.detail-main-thumb,
+.project-thumb,
+.small-thumb {
+  @apply rounded-[24px] border border-violet-400/20 bg-white/5 backdrop-blur-xl;
+}
+
+.portrait-card {
+  @apply relative z-10 w-[280px] h-[360px] md:w-[420px] md:h-[540px] p-4 shadow-[0_0_40px_rgba(139,92,246,0.18)];
+}
+
+.portrait-placeholder,
+.photo-placeholder {
+  @apply w-full h-full rounded-[20px] grid place-items-center text-white/40 text-lg;
+  background:
+    linear-gradient(135deg, rgba(139, 92, 246, 0.28), rgba(255, 255, 255, 0.04)),
+    rgba(255,255,255,0.02);
+}
+
+.tech {
+  @apply absolute z-20 rounded-2xl px-4 py-3 text-sm border border-white/10 bg-[#0a0816]/90 shadow-[0_0_30px_rgba(139,92,246,0.14)];
+}
+
+.tech-1 {
+  @apply top-20 right-6;
+}
+
+.tech-2 {
+  @apply top-52 right-0;
+}
+
+.tech-3 {
+  @apply bottom-20 right-6;
+}
+
+.grid-2 {
+  @apply grid md:grid-cols-2 gap-6 py-6;
+}
+
+.card {
+  @apply rounded-[26px] border border-violet-400/20 bg-[linear-gradient(180deg,rgba(18,12,35,0.88),rgba(10,8,20,0.76))] backdrop-blur-xl shadow-[0_0_30px_rgba(139,92,246,0.12)];
+}
+
+.about-text,
+.about-photo,
+.detail-copy,
+.detail-visual,
+.contact-info,
+.contact-form,
+.project-card,
+.journal-card {
+  @apply p-7;
+}
+
+.section-title span {
+  @apply inline-block text-xs uppercase tracking-[0.25em] text-fuchsia-400 mb-3;
+}
+
+.section-title h2 {
+  @apply text-4xl md:text-5xl font-bold leading-tight mb-0;
+}
+
+.about-text p,
+.contact-info p,
+.project-content p,
+.journal-card p,
+.detail-group p,
+.contact-list span {
+  @apply text-white/70 leading-8;
+}
+
+.about-photo {
+  @apply min-h-[360px];
+}
+
+.highlights {
+  @apply grid md:grid-cols-4 gap-5 py-6;
+}
+
+.mini-card {
+  @apply rounded-3xl border p-6;
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mini-card h3 {
+  @apply mb-3 text-lg;
+}
+
+.mini-card p {
+  @apply text-white/65 leading-7;
+}
+
+.section-block {
+  @apply py-6;
+}
+
+.section-header {
+  @apply flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-7;
+}
+
+.projects-grid {
+  @apply grid md:grid-cols-2 gap-5;
+}
+
+.project-card {
+  @apply overflow-hidden;
+}
+
+.project-thumb {
+  @apply h-56 mb-5;
+  background:
+    radial-gradient(circle at center, rgba(139, 92, 246, 0.18), transparent 45%),
+    linear-gradient(135deg, rgba(16, 10, 30, 0.95), rgba(24, 14, 44, 0.95));
+}
+
+.project-content h3 {
+  @apply text-2xl mb-3;
+}
+
+.tags {
+  @apply flex flex-wrap gap-3 mt-5;
+}
+
+.tags span {
+  @apply px-3 py-2 rounded-full text-sm bg-violet-500/10 border border-violet-400/20;
+}
+
+.project-detail {
+  @apply py-6;
+}
+
+.detail-copy h2 {
+  @apply text-3xl md:text-4xl font-bold leading-tight mb-4;
+}
+
+.detail-group {
+  @apply mt-6;
+}
+
+.detail-group h3 {
+  @apply text-xl mb-2;
+}
+
+.detail-group ul {
+  @apply mt-2 pl-5 text-white/70 leading-8;
+}
+
+.detail-main-thumb {
+  @apply h-[320px] mb-4;
+  background:
+    radial-gradient(circle at center, rgba(139, 92, 246, 0.16), transparent 45%),
+    linear-gradient(135deg, rgba(16, 10, 30, 0.95), rgba(24, 14, 44, 0.95));
+}
+
+.thumb-row {
+  @apply grid grid-cols-3 gap-4;
+}
+
+.small-thumb {
+  @apply h-28;
+  background:
+    radial-gradient(circle at center, rgba(139, 92, 246, 0.12), transparent 45%),
+    linear-gradient(135deg, rgba(16, 10, 30, 0.95), rgba(24, 14, 44, 0.95));
+}
+
+.journal-grid {
+  @apply grid md:grid-cols-3 gap-5;
+}
+
+.post-date {
+  @apply inline-block text-xs uppercase tracking-[0.2em] text-fuchsia-400 mb-4;
+}
+
+.journal-card h3 {
+  @apply text-2xl mb-3;
+}
+
+.journal-card a {
+  @apply inline-block mt-5 text-violet-400;
+}
+
+.contact {
+  @apply py-6 pb-12;
+}
+
+.contact-list {
+  @apply grid gap-5 mt-8;
+}
+
+.contact-list div {
+  @apply flex flex-col gap-1;
+}
+
+.contact-form {
+  @apply flex flex-col gap-4;
+}
+
+.contact-form input,
+.contact-form textarea {
+  @apply w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-white outline-none placeholder:text-white/35 focus:border-violet-400/40 focus:ring-4 focus:ring-violet-500/10;
+}
+
+.footer {
+  @apply w-[min(100%-24px,1240px)] mx-auto py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-white/60;
+}
+
+.bg-glow {
+  @apply absolute rounded-full blur-[100px] opacity-30 pointer-events-none;
+}
+
+.bg-glow-1 {
+  @apply w-[280px] h-[280px] bg-violet-600 top-16 -left-16;
+}
+
+.bg-glow-2 {
+  @apply w-[240px] h-[240px] bg-fuchsia-600 top-[480px] -right-16;
+}
